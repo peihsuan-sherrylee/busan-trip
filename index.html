@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>釜山三天兩夜小冊子</title>
+<meta name="description" content="12/4-12/6 釜山三天兩夜：海雲台、甘川洞、白淺灘、咖啡廳與美食，含交通與餐廳資訊">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/lxgwwenkaitc-regular.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/lxgwwenkaitc-bold.css">
+<style>
+:root{
+  --paper:#fffaf0; --card:#fffefb; --ink:#3d3428; --muted:#7a6e5f;
+  --peach:#ffc9b5; --peach-d:#e2704f;
+  --mint:#bfe6d6; --mint-d:#2f8a72;
+  --sky:#bfe0f7; --sky-d:#2f6f9c;
+  --butter:#ffe9a8; --butter-d:#a07612;
+  --pink:#ffd6e4; --lilac:#e3d9ff;
+  --wob:18px 24px 16px 26px / 24px 16px 26px 18px;
+  --wob2:26px 14px 22px 16px / 14px 24px 16px 22px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:"LXGW WenKai TC","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:16.5px;line-height:1.7;
+  background-color:var(--paper);
+  background-image:radial-gradient(#eadfc9 1.1px,transparent 1.3px);background-size:20px 20px}
+.emo,.opt li::before{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;font-weight:400}
+a{color:var(--sky-d)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+
+/* ---------- Tabs ---------- */
+.tabs{position:sticky;top:0;z-index:20;background:rgba(255,250,240,.94);backdrop-filter:blur(6px);border-bottom:2px dashed #d9ccb4}
+.tabs .wrap{display:flex;gap:8px;padding-top:10px;padding-bottom:10px;overflow-x:auto;scrollbar-width:none}
+.tabs .wrap::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;min-width:74px;font:inherit;font-weight:700;font-size:14.5px;line-height:1.25;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:var(--wob2);padding:6px 10px;box-shadow:2px 3px 0 var(--ink);cursor:pointer;transition:transform .15s}
+.tab small{display:block;font-weight:400;font-size:12px;color:var(--muted)}
+.tab:nth-child(1).on{background:var(--butter)}
+.tab:nth-child(2).on{background:var(--peach)}
+.tab:nth-child(3).on{background:var(--mint)}
+.tab:nth-child(4).on{background:var(--sky)}
+.tab.on{transform:rotate(-2deg) translateY(-1px)}
+.tab:active{transform:translate(2px,3px);box-shadow:0 0 0 var(--ink)}
+
+/* ---------- Pages ---------- */
+.js .page{display:none}
+.js .page.on{display:block}
+.page.in-next{animation:flipNext .5s cubic-bezier(.2,.8,.25,1)}
+.page.in-prev{animation:flipPrev .5s cubic-bezier(.2,.8,.25,1)}
+@keyframes flipNext{from{opacity:0;transform:perspective(1000px) rotateY(-18deg) translateX(40px);transform-origin:left center}to{opacity:1;transform:none}}
+@keyframes flipPrev{from{opacity:0;transform:perspective(1000px) rotateY(18deg) translateX(-40px);transform-origin:right center}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.page.in-next,.page.in-prev{animation:none}}
+main{padding-bottom:40px}
+
+/* ---------- Cover ---------- */
+.cover{position:relative;margin:22px 0 0;padding:26px 22px 24px;background:var(--sky);border:2.5px solid var(--ink);border-radius:var(--wob);box-shadow:4px 5px 0 var(--ink);overflow:hidden}
+.cover small{letter-spacing:.2em;font-weight:700;color:var(--sky-d)}
+.cover h1{font-size:46px;line-height:1.15;margin:6px 0 8px;font-weight:700}
+.cover h1 .hl{background:linear-gradient(transparent 58%,var(--butter) 58%,var(--butter) 92%,transparent 92%);padding:0 4px}
+.cover p{margin:0;max-width:70%}
+.cover .doodle{position:absolute;right:10px;top:16px;width:120px;height:120px}
+.cover .waves{display:block;width:calc(100% + 44px);margin:16px -22px -24px;height:42px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;position:relative}
+.chip{background:var(--card);border:2px solid var(--ink);padding:2px 12px;border-radius:999px;font-size:14px;font-weight:700}
+.chip:nth-child(2){transform:rotate(-2deg)} .chip:nth-child(3){transform:rotate(1.5deg)}
+
+.flights{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.flight{background:var(--card);border:2px solid var(--ink);border-radius:var(--wob2);padding:12px 14px;box-shadow:3px 4px 0 var(--ink);position:relative}
+.flight:first-child{transform:rotate(-1deg)} .flight:last-child{transform:rotate(1deg)}
+.flight .lbl{font-size:13px;color:var(--muted)}
+.flight .no{font-weight:700;font-size:24px;line-height:1.2}
+.flight .t{font-size:14px}
+
+h2.sec{font-size:24px;margin:30px 0 12px;font-weight:700;display:inline-block;background:linear-gradient(transparent 60%,var(--peach) 60%,var(--peach) 92%,transparent 92%);padding:0 6px}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:var(--wob);padding:16px 18px;box-shadow:3px 4px 0 var(--ink)}
+.tips{display:grid;gap:14px}
+.tip{display:flex;gap:12px;align-items:flex-start}
+.tip .ic{flex:0 0 38px;height:38px;border-radius:50% 45% 52% 48%;display:grid;place-items:center;background:var(--butter);border:2px solid var(--ink);font-size:19px}
+.tip:nth-child(even) .ic{background:var(--mint)}
+.tip b{display:block;font-size:16.5px}
+.tip span{color:#5d5344;font-size:15px}
+
+/* Day index on home */
+.dayindex{display:grid;gap:14px}
+.dcard{display:flex;align-items:center;gap:14px;text-align:left;width:100%;font:inherit;color:var(--ink);border:2px solid var(--ink);border-radius:var(--wob);padding:14px 16px;box-shadow:3px 4px 0 var(--ink);cursor:pointer;transition:transform .15s}
+.dcard:hover{transform:rotate(-.6deg) translateY(-2px)}
+.dcard:active{transform:translate(2px,3px);box-shadow:0 0 0 var(--ink)}
+.dcard.c1{background:var(--peach)} .dcard.c2{background:var(--mint)} .dcard.c3{background:var(--sky)}
+.dcard .num{flex:0 0 58px;height:58px;border:2px solid var(--ink);border-radius:50% 46% 54% 48%;background:var(--card);display:grid;place-items:center;font-weight:700;line-height:1.05;text-align:center;font-size:13px}
+.dcard .num b{font-size:20px;display:block}
+.dcard h3{margin:0;font-size:19px}
+.dcard p{margin:2px 0 0;font-size:14px;color:#4d4436}
+.dcard .arr{margin-left:auto;font-size:22px;font-weight:700}
+
+/* ---------- Day ---------- */
+.day{margin-top:24px}
+.dayhead{position:relative;border:2.5px solid var(--ink);border-radius:var(--wob);padding:20px 20px 18px;box-shadow:4px 5px 0 var(--ink);transform:rotate(-.8deg);margin:8px 4px 22px}
+.dayhead::before{content:"";position:absolute;top:-13px;left:38%;width:96px;height:24px;background:rgba(255,233,168,.85);border:1.5px dashed rgba(61,52,40,.35);transform:rotate(-4deg)}
+.d1 .dayhead{background:var(--peach)} .d2 .dayhead{background:var(--mint)} .d3 .dayhead{background:var(--sky)}
+.dayhead .n{font-size:14px;letter-spacing:.12em;font-weight:700}
+.dayhead h2{margin:2px 0 4px;font-size:30px;line-height:1.2}
+.dayhead p{margin:0;font-size:14.5px;max-width:74%}
+.dayhead .doodle{position:absolute;right:12px;bottom:10px;width:84px;height:84px}
+.daybody{background:var(--card);border:2px solid var(--ink);border-radius:var(--wob2);padding:6px 16px 10px;box-shadow:3px 4px 0 var(--ink)}
+
+.stop{display:grid;grid-template-columns:62px 1fr;gap:12px;padding:16px 0;border-bottom:2px dashed #e2d6c0}
+.stop:last-child{border-bottom:0}
+.time{align-self:start;justify-self:start;font-weight:700;font-size:14.5px;padding:2px 7px;border:2px solid var(--ink);border-radius:12px 9px 13px 8px;background:var(--butter);transform:rotate(-3deg);margin-top:2px}
+.d1 .time{background:var(--peach)} .d2 .time{background:var(--mint)} .d3 .time{background:var(--sky)}
+.stop:nth-child(even) .time{transform:rotate(2deg)}
+.stop h3{margin:0 0 4px;font-size:19px;line-height:1.35}
+.stop p{margin:0 0 6px;color:#4d4436}
+.go,.warn{display:block;border-radius:12px 16px 10px 14px;padding:6px 11px;font-size:14.5px;margin:6px 0 2px}
+.go{background:#eaf5fd;border:1.8px dashed var(--sky-d);color:#24597e}
+.warn{background:#fff6d8;border:1.8px dashed var(--butter-d);color:#7a5a0c}
+
+.opts{display:grid;gap:12px;margin-top:12px}
+.opt{position:relative;border:2px solid var(--ink);border-radius:var(--wob2);padding:12px 14px;background:#fffdf7;box-shadow:2px 3px 0 var(--ink)}
+.opt:nth-child(odd){transform:rotate(-.4deg)} .opt:nth-child(even){transform:rotate(.4deg)}
+.opt .tag{display:inline-block;font-size:13px;font-weight:700;padding:0 10px;border:1.8px solid var(--ink);border-radius:999px;margin-bottom:4px;background:var(--pink)}
+.opt.cafe .tag{background:var(--mint)}
+.opt h4{margin:0;font-size:18px;line-height:1.35}
+.opt .ko{color:var(--muted);font-size:14px;font-weight:400;margin-left:6px;font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+.opt ul{margin:6px 0 0;padding-left:0;list-style:none;font-size:14.8px}
+.opt li{padding-left:24px;position:relative;margin:3px 0}
+.opt li::before{position:absolute;left:0;top:0}
+.opt li.a::before{content:"📍"} .opt li.h::before{content:"🕒"} .opt li.p::before{content:"💰"} .opt li.s::before{content:"🚇"} .opt li.n::before{content:"💡"}
+.map{display:inline-block;margin-top:8px;font-size:14px;font-weight:700;text-decoration:none;background:#7fd7a0;color:var(--ink);border:2px solid var(--ink);padding:1px 12px;border-radius:12px 8px 12px 9px;box-shadow:2px 2px 0 var(--ink)}
+.map:active{transform:translate(2px,2px);box-shadow:none}
+
+/* ---------- Pager ---------- */
+.pager{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:26px 0 0}
+.pg{font:inherit;font-weight:700;font-size:15px;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:var(--wob2);padding:8px 14px;box-shadow:2px 3px 0 var(--ink);cursor:pointer}
+.pg:active{transform:translate(2px,3px);box-shadow:none}
+.pg[disabled]{visibility:hidden}
+.pg.next{background:var(--butter)}
+.pnum{font-size:14px;color:var(--muted)}
+.swipe{text-align:center;color:var(--muted);font-size:13px;margin-top:10px}
+.foot{margin-top:26px;color:var(--muted);font-size:14px;text-align:center}
+.foot p{margin:3px 0}
+
+@media (max-width:480px){
+  .cover h1{font-size:40px}
+  .cover .doodle{width:92px;height:92px;right:6px;top:12px}
+  .dayhead h2{font-size:26px}
+  .dayhead .doodle{width:68px;height:68px}
+  .stop{grid-template-columns:56px 1fr;gap:10px}
+  .flight .no{font-size:21px}
+}
+@media print{
+  .tabs,.pager,.swipe{display:none}
+  .js .page{display:block}
+  .opt,.stop{break-inside:avoid}
+}
+
+</style>
+</head>
+<body>
+<nav class="tabs" aria-label="選擇日期"><div class="wrap">
+  <button class="tab on" data-go="0">封面<small>總覽</small></button>
+  <button class="tab" data-go="1">Day 1<small>12/4 五</small></button>
+  <button class="tab" data-go="2">Day 2<small>12/5 六</small></button>
+  <button class="tab" data-go="3">Day 3<small>12/6 日</small></button>
+</div></nav>
+<main class="wrap">
+  <section class="page on" id="home" data-i="0">
+    <div class="cover">
+      <svg class="doodle" viewBox="0 0 120 120" aria-hidden="true"><circle cx="62" cy="56" r="24" fill="#ffe9a8" stroke="#3d3428" stroke-width="3"/><g fill="none" stroke="#3d3428" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M62 18v-8M62 102v-8M24 56h-8M108 56h-8M35 29l-6-6M95 89l-6-6M89 29l6-6M29 89l6-6"/><path d="M52 58q4 5 10 0M54 49h.1M70 49h.1" stroke-width="3.5"/></g></svg>
+      <small>BUSAN TRIP BOOKLET</small>
+      <h1>釜山<br><span class="hl">三天兩夜</span></h1>
+      <p>海雲台出發 ・ 甘川洞 ・ 白淺灘 ・ 海景咖啡 ・ 在地美食</p>
+      <div class="chips">
+        <span class="chip"><span class="emo">📅</span> 12/4（五）- 12/6（日）</span>
+        <span class="chip"><span class="emo">👫</span> 2 人</span>
+        <span class="chip"><span class="emo">🏨</span> 住海雲台站附近</span>
+      </div>
+      <svg class="waves" viewBox="0 0 400 42" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18q25-14 50 0t50 0 50 0 50 0 50 0 50 0 50 0 50 0V42H0z" fill="#fffefb" stroke="#3d3428" stroke-width="2.5"/></svg>
+    </div>
+
+    <div class="flights">
+      <div class="flight"><div class="lbl">去程 <span class="emo">✈</span></div><div class="no">LJ578</div><div class="t">12/4（五）06:10 抵達金海</div></div>
+      <div class="flight"><div class="lbl">回程 <span class="emo">✈</span></div><div class="no">LJ577</div><div class="t">12/6（日）21:50 金海起飛</div></div>
+    </div>
+
+    <h2 class="sec"><span class="emo">📖</span> 點日期翻到那一天</h2>
+    <div class="dayindex">
+      <button class="dcard c1" data-go="1"><span class="num">12/4<b>五</b></span><span><h3>Day 1 海雲台慢慢醒來</h3><p>汗蒸幕 → 新世界百貨 → 青沙浦咖啡 → 膠囊列車 → 韓牛排骨</p></span><span class="arr">→</span></button>
+      <button class="dcard c2" data-go="2"><span class="num">12/5<b>六</b></span><span><h3>Day 2 甘川洞與舊城區</h3><p>甘川洞 → 南浦洞 → 白淺灘看夕陽 → 廣安里夜景</p></span><span class="arr">→</span></button>
+      <button class="dcard c3" data-go="3"><span class="num">12/6<b>日</b></span><span><h3>Day 3 機張海岸線</h3><p>海東龍宮寺 → 海女村 → Wave On Coffee → 逛街 → 回程</p></span><span class="arr">→</span></button>
+    </div>
+
+    <h2 class="sec"><span class="emo">🎒</span> 行前須知</h2>
+    <div class="card tips">
+    <div class="tip"><div class="ic"><span class="emo">🚌</span></div><div><b>機場 → 海雲台：利木津巴士 1 號線</b><span>約 ₩6,000-7,000，60-80 分鐘，在「海雲台海水浴場」站下車。首班車時間請在入境大廳服務台確認（機場服務電話 1661-2626）。<br>備案：輕軌到「沙上站」轉地鐵 2 號線到「海雲台站」，約 1 小時、₩2,800 左右。也可以搭 Kakao T 計程車，約 40-50 分鐘、₩35,000-45,000。</span></div></div>
+    <div class="tip"><div class="ic"><span class="emo">💳</span></div><div><b>交通卡</b><span>準備一張 T-money 或 Busan Pass，地鐵和公車都能刷。</span></div></div>
+    <div class="tip"><div class="ic"><span class="emo">🏨</span></div><div><b>飯店 16:00 入住</b><span>Day 1 一抵達就先寄放行李。Day 3 退房後也先寄放，傍晚再回來拿。</span></div></div>
+    <div class="tip"><div class="ic"><span class="emo">🚃</span></div><div><b>天空膠囊列車已預約</b><span>12/4（五）15:30 青沙浦出發 → 尾浦。</span></div></div>
+    <div class="tip"><div class="ic"><span class="emo">🧥</span></div><div><b>12 月初天氣</b><span>約 5-14°C，17:15 左右就天黑，海邊風很大，記得帶保暖外套和好走的鞋。</span></div></div>
+    <div class="tip"><div class="ic"><span class="emo">🗺️</span></div><div><b>導航用 Naver Map</b><span>在韓國比 Google Maps 準。下方每家店都附 Naver 連結，點了就能直接搜尋。</span></div></div>
+  </div>
+
+  <nav class="pager"><button class="pg prev" disabled>←</button><span class="pnum">1 / 4</span><button class="pg next" data-go="1">下一頁 →</button></nav>
+  </section>
+<section class="page day d1" id="day1" data-i="1">
+    <div class="dayhead"><svg class="doodle" viewBox="0 0 90 90" aria-hidden="true"><path d="M6 70q20-8 40-2t40-4" fill="none" stroke="#3d3428" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="18" y="30" width="46" height="30" rx="14" fill="#ffe9a8" stroke="#3d3428" stroke-width="3"/><g fill="none" stroke="#3d3428" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="44" r="5"/><circle cx="50" cy="44" r="5"/><path d="M41 30v-8M30 22h22"/></g></svg>
+      <div class="n">DAY 1 ・ 12/4（五）</div>
+      <h2>海雲台慢慢醒來</h2>
+      <p>汗蒸幕補眠 → 新世界百貨 → 青沙浦咖啡 → 天空膠囊列車 → 韓牛排骨</p>
+    </div>
+    <div class="daybody">
+
+      <div class="stop"><div class="time">07:00</div><div>
+        <h3>出關，搭利木津巴士到海雲台</h3>
+        <span class="go"><span class="emo">🚌</span> 利木津 1 號線 → 「海雲台海水浴場」站</span>
+      </div></div>
+
+      <div class="stop"><div class="time">08:30</div><div>
+        <h3>飯店寄放行李</h3>
+      </div></div>
+
+      <div class="stop"><div class="time">09:00</div><div>
+        <h3>早餐：熱騰騰的湯飯</h3>
+        <div class="opts">
+          <div class="opt"><span class="tag">推薦 A</span>
+            <h4>海雲台元祖奶奶湯飯<span class="ko">해운대원조할매국밥</span></h4>
+            <ul>
+              <li class="h">24 小時營業</li>
+              <li class="p">牛肉湯飯（소고기국밥）約 ₩6,000 起（2022 年價格）</li>
+              <li class="s">地鐵 2 號線「海雲台站」1 號出口，步行約 5 分鐘</li>
+              <li class="n">這家是牛肉湯飯老店，紅眼班機後喝很舒服</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/해운대원조할매국밥" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt"><span class="tag">推薦 B</span>
+            <h4>巨大豬肉湯飯<span class="ko">거대돼지국밥</span></h4>
+            <ul>
+              <li class="a">부산 해운대구 달맞이길 16-2</li>
+              <li class="h">09:00-21:00</li>
+              <li class="n">想吃釜山經典豬肉湯飯就選這家，可以加點水煮肉（수육）</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/거대돼지국밥" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">10:00</div><div>
+        <h3>Spa Land 汗蒸幕補眠</h3>
+        <p>洗澡、泡湯、在休息區睡一覺，把紅眼班機的疲勞補回來。</p>
+        <span class="go"><span class="emo">🚇</span> 2 號線「海雲台站」→「Centum City 站」12 號出口，步行 3 分鐘（3 站）</span>
+        <div class="opts">
+          <div class="opt cafe"><span class="tag">設施資訊</span>
+            <h4>Spa Land Centum City<span class="ko">스파랜드 센텀시티</span></h4>
+            <ul>
+              <li class="a">新世界百貨 Centum City 店內（센텀남대로 35）</li>
+              <li class="h">06:00-23:00（最後入場 22:00）</li>
+              <li class="p">平日 ₩17,000／假日 ₩20,000，限時 4 小時（12/4 週五為平日價）</li>
+            </ul>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">13:00</div><div>
+        <h3>午餐：新世界百貨美食街</h3>
+        <p>就在 Spa Land 同一棟，選擇多，不用再移動。</p>
+      </div></div>
+
+      <div class="stop"><div class="time">13:45</div><div>
+        <h3><span class="emo">🛍️</span> 逛新世界百貨 Centum City</h3>
+        <p>世界最大的百貨公司之一，韓國品牌、美妝、生活雜貨都很齊全。今天先快速逛一圈，Day 3 下午還有逛街時間。</p>
+        <span class="warn"><span class="emo">🕒</span> 14:30 準時出發去青沙浦，別錯過膠囊列車</span>
+      </div></div>
+
+      <div class="stop"><div class="time">14:30</div><div>
+        <h3>青沙浦海景咖啡廳</h3>
+        <span class="go"><span class="emo">🚕</span> 從新世界百貨搭計程車到青沙浦約 20 分鐘</span>
+        <span class="warn"><span class="emo">⏱</span> 15:15 前離開咖啡廳，走到 Blueline Park「青沙浦站」</span>
+        <div class="opts">
+          <div class="opt cafe"><span class="tag">咖啡 A</span>
+            <h4>H.US Coffee<span class="ko">에이치어스</span></h4>
+            <ul>
+              <li class="a">부산 해운대구 청사포로 135</li>
+              <li class="h">平日 11:30-18:30／假日 11:30-19:30</li>
+              <li class="n">三層樓，每層配色不同，大片落地窗直接看海</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/에이치어스 청사포" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt cafe"><span class="tag">咖啡 B</span>
+            <h4>Cafe Roof Top<span class="ko">카페 루프탑</span></h4>
+            <ul>
+              <li class="a">부산 해운대구 청사포로 139-4</li>
+              <li class="h">11:00-22:00</li>
+              <li class="n">人氣頂樓露台，靠海的位子要排隊</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/카페 루프탑 청사포" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt cafe"><span class="tag">咖啡 C</span>
+            <h4>Edge 993<span class="ko">엣지993</span></h4>
+            <ul>
+              <li class="a">부산 해운대구 달맞이길62번길 78</li>
+              <li class="h">週一至四 11:00-21:00／週五至日 11:00-22:00</li>
+              <li class="n">小小一間在鐵道旁，窗邊可以看彩色列車經過</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/엣지993" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">15:30</div><div>
+        <h3><span class="emo">🚃</span> 天空膠囊列車（已預約）</h3>
+        <p>青沙浦站出發 → 尾浦站，約 30 分鐘。下午光線最好，海面閃閃發亮。</p>
+        <span class="warn"><span class="emo">🎫</span> 已預約：12/4（五）15:30 青沙浦出發。請提早 15 分鐘到站報到</span>
+      </div></div>
+
+      <div class="stop"><div class="time">16:15</div><div>
+        <h3>回飯店 check-in，休息一下</h3>
+        <span class="go"><span class="emo">🚶</span> 從「尾浦站」步行約 15 分鐘回「海雲台站」一帶</span>
+      </div></div>
+
+      <div class="stop"><div class="time">17:00</div><div>
+        <h3>海雲台海灘散步看夕陽</h3>
+        <p>12 月初約 17:15 日落，沿著海灘走走，天色從橘色慢慢變成藍色。</p>
+      </div></div>
+
+      <div class="stop"><div class="time">18:30</div><div>
+        <h3>晚餐：海雲台韓牛排骨</h3>
+        <span class="go"><span class="emo">🚶</span> 從海雲台海灘或飯店步行約 10 分鐘</span>
+        <div class="opts">
+          <div class="opt"><span class="tag">推薦 A ・ 建議先訂位</span>
+            <h4>海雲台小聞難韓牛排骨<span class="ko">해운대소문난암소갈비집</span></h4>
+            <ul>
+              <li class="a">부산 해운대구 중동2로10번길 32-10</li>
+              <li class="h">11:30-22:00（週末 15:15-16:30 休息）</li>
+              <li class="p">高價位，以現場菜單為準</li>
+              <li class="s">「海雲台站」步行約 10 分鐘</li>
+              <li class="n">韓屋老店，吃完肉一定要點馬鈴薯麵（감자국수）煮在烤盤肉汁裡</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/해운대소문난암소갈비집" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt"><span class="tag">推薦 B</span>
+            <h4>小村燉排骨 海里團路本店<span class="ko">소촌갈비찜 해리단길본점</span></h4>
+            <ul>
+              <li class="a">부산 해운대구 우동1로20번길 29, 2F</li>
+              <li class="h">11:00-21:00（15:20-17:00 休息）</li>
+              <li class="s">「海雲台站」附近的海里團路</li>
+              <li class="n">燉牛小排，預算比較親民</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/소촌갈비찜 해리단길본점" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">20:30</div><div>
+        <h3>The Bay 101 看 Marine City 夜景</h3>
+        <span class="go"><span class="emo">🚇</span> 2 號線「冬柏站」1 號出口，步行約 10 分鐘（或從飯店散步過去）</span>
+        <span class="warn"><span class="emo">🦪</span> 還沒吃飽？青沙浦的「海雲台1號烤貝」（해운대1번조개구이）營業到凌晨 4 點</span>
+      </div></div>
+
+    </div>
+  <nav class="pager"><button class="pg prev" data-go="0">← 上一頁</button><span class="pnum">2 / 4</span><button class="pg next" data-go="2">下一頁 →</button></nav>
+  </section>
+<section class="page day d2" id="day2" data-i="2">
+    <div class="dayhead"><svg class="doodle" viewBox="0 0 90 90" aria-hidden="true"><rect x="8" y="46" width="22" height="26" fill="#ffd6e4" stroke="#3d3428" stroke-width="3"/><path d="M5 47l14-14 14 14" fill="#ffc9b5" stroke="#3d3428" stroke-width="3" stroke-linejoin="round"/><rect x="34" y="36" width="22" height="36" fill="#ffe9a8" stroke="#3d3428" stroke-width="3"/><path d="M31 37l14-14 14 14" fill="#bfe0f7" stroke="#3d3428" stroke-width="3" stroke-linejoin="round"/><rect x="60" y="50" width="22" height="22" fill="#e3d9ff" stroke="#3d3428" stroke-width="3"/><path d="M57 51l14-13 14 13" fill="#bfe6d6" stroke="#3d3428" stroke-width="3" stroke-linejoin="round"/><g fill="none" stroke="#3d3428" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M45 50v6M17 56h4M71 58h3"/></g></svg>
+      <div class="n">DAY 2 ・ 12/5（六）</div>
+      <h2>甘川洞與舊城區</h2>
+      <p>甘川洞文化村 → 南浦洞 → 白淺灘海景咖啡 → 廣安里夜景</p>
+    </div>
+    <div class="daybody">
+
+      <div class="stop"><div class="time">09:00</div><div>
+        <h3>出發去甘川洞</h3>
+        <span class="go"><span class="emo">🚇</span> 2 號線「海雲台站」→「西面站」轉 1 號線 →「土城站」6 號出口</span>
+        <span class="go"><span class="emo">🚐</span> 出站轉搭社區小巴（서구2、서구2-2、사하1-1）到「감정초등학교」站，或計程車約 ₩5,000</span>
+        <span class="warn"><span class="emo">⏱</span> 全程約 60-70 分鐘</span>
+      </div></div>
+
+      <div class="stop"><div class="time">10:00</div><div>
+        <h3>甘川洞文化村</h3>
+        <p>彩色房子、小王子與狐狸雕像、觀景台。早上人少最好拍。逛累了到頂樓咖啡廳休息：</p>
+        <div class="opts">
+          <div class="opt cafe"><span class="tag">咖啡 A</span>
+            <h4>Coffee It House<span class="ko">커피잇집</span></h4>
+            <ul>
+              <li class="a">부산 사하구 옥천로 115</li>
+              <li class="h">09:30-18:30</li>
+              <li class="p">草莓拿鐵約 ₩6,500</li>
+              <li class="n">粉紅外牆，頂樓可看整個村子，上頂樓需每人點一杯</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/커피잇집 감천" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt cafe"><span class="tag">咖啡 B</span>
+            <h4>The Plate<span class="ko">더플레이트</span></h4>
+            <ul>
+              <li class="a">부산 사하구 감내2로 113</li>
+              <li class="h">11:00-19:30</li>
+              <li class="p">飲料約 ₩5,000-8,000</li>
+              <li class="n">就在彩色階梯旁，有甜點</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/더플레이트 감천" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">12:30</div><div>
+        <h3>午餐：南浦洞</h3>
+        <span class="go"><span class="emo">🚇</span> 小巴回「土城站」→ 1 號線 →「南浦站」（2 站）</span>
+        <div class="opts">
+          <div class="opt"><span class="tag">推薦 A</span>
+            <h4>奶奶伽倻小麥冷麵<span class="ko">할매가야밀면</span></h4>
+            <ul>
+              <li class="a">부산 중구 남포동1가 2-17</li>
+              <li class="h">10:30-21:30</li>
+              <li class="p">小麥冷麵 大 ₩9,000／小 ₩8,000，餃子 ₩5,000（2023 年價格）</li>
+              <li class="n">釜山代表性的小麥冷麵（밀면），也有辣拌版本</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/할매가야밀면" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt"><span class="tag">推薦 B</span>
+            <h4>螞蟻家 本店<span class="ko">개미집 부산본점</span></h4>
+            <ul>
+              <li class="a">부산 중구 광복동（光復洞）</li>
+              <li class="h">09:00-22:00</li>
+              <li class="n">釜山限定的「辣炒章魚＋牛腸＋蝦」（낙곱새），配白飯超下飯</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/개미집 부산본점" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">13:30</div><div>
+        <h3>BIFF 廣場、國際市場、札嘎其市場</h3>
+        <p>BIFF 廣場吃黑糖堅果餅（씨앗호떡），逛國際市場，再走到札嘎其市場看海鮮。三個地方都在「南浦站」與「札嘎其站」之間，走路就能串起來，逛 1 小時左右就好，把時間留給白淺灘。</p>
+      </div></div>
+
+      <div class="stop"><div class="time">14:45</div><div>
+        <h3><span class="emo">⭐</span> 影島白淺灘文化村 ・ 懸崖海景咖啡</h3>
+        <p>今天的重點之一，留了將近 3 小時慢慢逛。沿著懸崖邊的白色小巷散步，走一段絕影海岸散步路，穿過白淺灘海岸隧道拍照，最後找間咖啡廳等夕陽。</p>
+        <span class="go"><span class="emo">🚕</span> 從南浦洞搭計程車約 10 分鐘，或搭公車到「흰여울문화마을」站（路線請用 Naver Map 查）</span>
+        <span class="warn"><span class="emo">🌅</span> 12 月初約 17:15 日落，可以在這裡看夕陽</span>
+        <div class="opts">
+          <div class="opt cafe"><span class="tag">咖啡 A</span>
+            <h4>手腕書架<span class="ko">손목서가</span></h4>
+            <ul>
+              <li class="a">부산 영도구 흰여울길 307</li>
+              <li class="h">11:00-19:00</li>
+              <li class="n">獨立書店兼咖啡，窗邊位子看海</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/손목서가" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt cafe"><span class="tag">咖啡 B</span>
+            <h4>白淺灘海灘咖啡<span class="ko">흰여울비치</span></h4>
+            <ul>
+              <li class="a">부산 영도구 절영로 236</li>
+              <li class="h">11:00-20:00（週六到 21:00）</li>
+              <li class="n">室內外露台都有，大面海景窗很好拍</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/흰여울비치" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">18:00</div><div>
+        <h3>晚餐：民樂生魚片海鮮</h3>
+        <span class="go"><span class="emo">🚕</span> 計程車到廣安里約 30 分鐘；或回南浦站搭 1 號線到「西面站」轉 2 號線到「民樂站」，步行約 15 分鐘</span>
+        <div class="opts">
+          <div class="opt"><span class="tag">推薦</span>
+            <h4>民樂生魚片城<span class="ko">민락회타운</span></h4>
+            <ul>
+              <li class="n">一樓挑選活海鮮付款，樓上餐廳幫你料理</li>
+              <li class="p">兩人生魚片拼盤約 ₩35,000 起，另加每人 ₩5,000-6,000 座位費、辣魚湯約 ₩10,000-15,000</li>
+              <li class="n">可以順便看廣安大橋夜景，離廣安里海灘很近</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/민락회타운" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">19:30</div><div>
+        <h3>廣安里海灘看廣安大橋</h3>
+        <span class="warn"><span class="emo">🚁</span> 12/5 剛好是星期六，可以看廣安里無人機燈光秀，出發前請確認冬季場次與時間</span>
+        <div class="opts">
+          <div class="opt cafe"><span class="tag">夜景咖啡 A</span>
+            <h4>CUP&amp;CUP<span class="ko">컵앤컵</span></h4>
+            <ul>
+              <li class="a">부산 수영구 광안해변로 177, 4F</li>
+              <li class="h">11:00-21:00（頂樓到 20:00）</li>
+              <li class="n">正對廣安大橋，頂樓有露台</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/컵앤컵 광안리" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt cafe"><span class="tag">夜景咖啡 B</span>
+            <h4>星星床<span class="ko">별침대</span></h4>
+            <ul>
+              <li class="a">부산 수영구 광안해변로 203</li>
+              <li class="h">10:00-24:00</li>
+              <li class="p">₩11,800 通行券（自助吧）</li>
+              <li class="n">二樓座位看大橋夜景很漂亮</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/별침대 광안리" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">21:30</div><div>
+        <h3>回海雲台</h3>
+        <span class="go"><span class="emo">🚇</span> 2 號線「廣安站」→「海雲台站」（6 站，約 12 分鐘）</span>
+      </div></div>
+
+    </div>
+  <nav class="pager"><button class="pg prev" data-go="1">← 上一頁</button><span class="pnum">3 / 4</span><button class="pg next" data-go="3">下一頁 →</button></nav>
+  </section>
+<section class="page day d3" id="day3" data-i="3">
+    <div class="dayhead"><svg class="doodle" viewBox="0 0 90 90" aria-hidden="true"><path d="M18 40h44v14a22 22 0 0 1-44 0z" fill="#fffefb" stroke="#3d3428" stroke-width="3" stroke-linejoin="round"/><path d="M62 46h6a8 8 0 0 1 0 16h-8" fill="none" stroke="#3d3428" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><g fill="none" stroke="#3d3428" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M30 30q-5-6 0-12t0-12M42 30q-5-6 0-12t0-12M54 30q-5-6 0-12"/><path d="M10 82h64"/></g><path d="M28 58q12 6 24 0" stroke="#e2704f" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+      <div class="n">DAY 3 ・ 12/6（日）</div>
+      <h2>機張海岸線</h2>
+      <p>睡飽出發 → 海東龍宮寺 → 海女村鮑魚粥 → Wave On Coffee → 逛街 → 回程</p>
+    </div>
+    <div class="daybody">
+
+      <div class="stop"><div class="time">08:30</div><div>
+        <h3>睡飽吃早餐</h3>
+        <p>回味 Day 1 沒吃到的那家湯飯（元祖奶奶湯飯 24 小時營業），或在飯店附近隨意吃。</p>
+      </div></div>
+
+      <div class="stop"><div class="time">09:30</div><div>
+        <h3>退房，行李寄放飯店</h3>
+      </div></div>
+
+      <div class="stop"><div class="time">10:00</div><div>
+        <h3>海東龍宮寺</h3>
+        <p>建在海邊岩石上的寺廟，免費參觀。星期日人比較多，慢慢逛。</p>
+        <span class="go"><span class="emo">🚕</span> 從海雲台搭計程車約 20-25 分鐘（推薦）；或在「海雲台站」7 號出口附近搭公車 181，到「용궁사·국립수산과학원」站，步行約 10 分鐘</span>
+      </div></div>
+
+      <div class="stop"><div class="time">11:30</div><div>
+        <h3>午餐：機張海女村</h3>
+        <span class="go"><span class="emo">🚕</span> 從龍宮寺搭計程車約 10 分鐘</span>
+        <div class="opts">
+          <div class="opt"><span class="tag">推薦</span>
+            <h4>蓮花里海女村<span class="ko">연화리 해녀촌</span></h4>
+            <ul>
+              <li class="a">부산 기장군 기장읍 연화1길 184</li>
+              <li class="h">09:00-18:00，<b>週三公休</b></li>
+              <li class="p">鮑魚粥每人約 US$8，兩人份起點；海鮮拼盤中份約 US$26</li>
+              <li class="n"><b>只收現金</b>，記得帶韓元</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/연화리 해녀촌" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">13:00</div><div>
+        <h3>Wave On Coffee</h3>
+        <span class="go"><span class="emo">🚕</span> 計程車約 15-20 分鐘</span>
+        <div class="opts">
+          <div class="opt cafe"><span class="tag">海景咖啡</span>
+            <h4>Wave On Coffee<span class="ko">웨이브온 커피</span></h4>
+            <ul>
+              <li class="a">부산 기장군 장안읍 해맞이로 286</li>
+              <li class="h">約 10:00 或 11:00 開門至 24:00（最後點餐 23:00）</li>
+              <li class="n">得過建築獎的玻璃建築，幾乎每個角落都能看海。假日人多，平日較好</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/웨이브온 커피" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">14:30</div><div>
+        <h3><span class="emo">🛍️</span> 最後逛街採買（二選一）</h3>
+        <div class="opts">
+          <div class="opt cafe"><span class="tag">選項 A ・ 順路</span>
+            <h4>樂天 Premium Outlets 東釜山店<span class="ko">롯데프리미엄아울렛 동부산점</span></h4>
+            <ul>
+              <li class="s">從 Wave On 搭計程車約 25 分鐘，逛完再搭計程車回海雲台約 20 分鐘</li>
+              <li class="n">運動、休閒品牌多，很適合撿便宜</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/롯데프리미엄아울렛 동부산점" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt cafe"><span class="tag">選項 B ・ 輕鬆</span>
+            <h4>海雲台市場 ＋ 海里團路<span class="ko">해운대시장 ・ 해리단길</span></h4>
+            <ul>
+              <li class="s">從 Wave On 搭計程車回海雲台約 35 分鐘，都在「海雲台站」走路範圍</li>
+              <li class="n">市場買零食伴手禮，海里團路有很多選物店和小咖啡廳</li>
+            </ul>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">17:00</div><div>
+        <h3>早一點吃晚餐</h3>
+        <div class="opts">
+          <div class="opt"><span class="tag">推薦 A</span>
+            <h4>濟州通白帶魚<span class="ko">제주통갈치</span></h4>
+            <ul>
+              <li class="a">부산 해운대구 해운대해변로265번길 10-1</li>
+              <li class="h">10:00-22:00</li>
+              <li class="n">整條濟州白帶魚料理，海雲台海灘附近</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/제주통갈치 해운대" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+          <div class="opt"><span class="tag">推薦 B</span>
+            <h4>新沙花蟹堂 海雲台店<span class="ko">신사꽃게당 해운대</span></h4>
+            <ul>
+              <li class="a">부산 해운대구 해운대해변로 257, 2F</li>
+              <li class="h">10:00-23:50</li>
+              <li class="n">醬蟹定食、辣花蟹湯</li>
+            </ul>
+            <a class="map" href="https://map.naver.com/p/search/신사꽃게당 해운대" target="_blank" rel="noopener">N 開啟 Naver Map</a>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="stop"><div class="time">18:30</div><div>
+        <h3>拿行李，前往金海機場</h3>
+        <span class="go"><span class="emo">🚕</span> 計程車約 40-50 分鐘（最穩）；或利木津 1 號線從「海雲台海水浴場」站出發，請先確認末班車時間</span>
+        <span class="warn"><span class="emo">✈</span> 19:50 前到機場，LJ577 21:50 起飛</span>
+      </div></div>
+
+    </div>
+  <nav class="pager"><button class="pg prev" data-go="2">← 上一頁</button><span class="pnum">4 / 4</span><button class="pg next" data-go="0">回封面 ↺</button></nav>
+  </section>
+  <p class="swipe"><span class="emo">👆</span> 左右滑動也可以翻頁</p>
+  <div class="foot">
+    <p>營業時間與價格會變動，出發前請用 Naver Map 再確認一次。</p>
+    <p>一路順風，玩得開心 <span class="emo">✨</span></p>
+  </div>
+</main>
+<script>
+(function(){
+  var d=document.documentElement; d.classList.add('js');
+  var pages=[].slice.call(document.querySelectorAll('.page'));
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var ids=['home','day1','day2','day3'], cur=0;
+  function show(i,push){
+    i=Math.max(0,Math.min(3,+i)); if(i===cur&&push!==null){window.scrollTo({top:0,behavior:'smooth'});return;}
+    var dir=i>cur?'in-next':'in-prev';
+    pages.forEach(function(p,k){p.classList.remove('on','in-next','in-prev'); if(k===i){p.classList.add('on'); if(push!==null) p.classList.add(dir);}});
+    tabs.forEach(function(t,k){t.classList.toggle('on',k===i); if(k===i&&t.scrollIntoView) t.scrollIntoView({inline:'center',block:'nearest'});});
+    cur=i; window.scrollTo(0,0);
+    if(push) try{history.pushState(null,'','#'+ids[i]);}catch(e){}
+  }
+  document.addEventListener('click',function(e){var b=e.target.closest('[data-go]'); if(b){show(b.getAttribute('data-go'),true);}});
+  function fromHash(){var i=ids.indexOf(location.hash.slice(1)); show(i<0?0:i,null);}
+  window.addEventListener('popstate',fromHash); fromHash();
+  var sx=0,sy=0;
+  document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY;},{passive:true});
+  document.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;
+    if(Math.abs(dx)>70&&Math.abs(dy)<50){ if(e.target.closest('.tabs'))return; show(cur+(dx<0?1:-1),true);} },{passive:true});
+  document.addEventListener('keydown',function(e){if(e.key==='ArrowRight')show(cur+1,true); if(e.key==='ArrowLeft')show(cur-1,true);});
+})();
+</script>
+</body>
+</html>
